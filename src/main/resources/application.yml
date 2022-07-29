@@ -1,0 +1,28 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+spring:
+  application:
+    name: "Gestion des taches"
+    physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
+
+  datasource:
+    url: jdbc:mariadb://localhost:3306/gestiondestaches
+    username: ezechiel
+    password: fukijada
+    driver-class-name: org.mariadb.jdbc.Driver
+    hikari:
+      maximum-pool-size: 5
+
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MariaDBDialect
+        format_sql: true
+    hibernate:
+      # Hibernate ddl auto (none, update, create, create-drop)
+      ddl-auto: update
